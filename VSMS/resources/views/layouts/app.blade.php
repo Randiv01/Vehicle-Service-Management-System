@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    @stack('styles')
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-light">
@@ -19,6 +20,8 @@
     </div>
 
     @include('includes.footer')
+
+    @stack('scripts')
 </body>
 
 </html>
