@@ -7,6 +7,14 @@ Route::get('/', function () {
 
 });
 
+Route::get('/about', function () {
+    return view('pages.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('contact');
+
 // Authentication Routes (UI only for now)
 Route::get('/login', function () {
     return view('auth.login');

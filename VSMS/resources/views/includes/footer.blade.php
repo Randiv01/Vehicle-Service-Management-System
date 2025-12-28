@@ -22,9 +22,9 @@
             <!-- Contact -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 fw-bold text-primary">Contact</h5>
-                <p><i class="fas fa-home me-3"></i> 123 Service Lane, Auto City</p>
+                <p><i class="fas fa-home me-3"></i> No. 245, Galle Road,<br>Colombo 03,Sri Lanka</p>
                 <p><i class="fas fa-envelope me-3"></i> contact@motorcare.com</p>
-                <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                <p><i class="fas fa-phone me-3"></i> +94 77478513</p>
             </div>
         </div>
 

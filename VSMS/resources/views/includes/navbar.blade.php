@@ -18,10 +18,10 @@
           <a class="nav-link fw-semibold" href="#">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="#">About Us</a>
+          <a class="nav-link fw-semibold" href="{{ route('about') }}">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="#">Contact</a>
+          <a class="nav-link fw-semibold" href="{{ route('contact') }}">Contact</a>
         </li>
       </ul>
       <div class="d-flex ms-lg-3 gap-2">
