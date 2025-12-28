@@ -15,6 +15,10 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::get('/services', function () {
+    return view('pages.services');
+})->name('services');
+
 // Authentication Routes (UI only for now)
 Route::get('/login', function () {
     return view('auth.login');
