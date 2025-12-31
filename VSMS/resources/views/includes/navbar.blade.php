@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-2">
-  <div class="container">
+  <div class="container-fluid px-4 px-lg-5">
     <!-- Brand -->
     <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
       <img src="{{ asset('images/MotorCare.png') }}" alt="MotorCare Logo" height="50" class="me-2">
@@ -41,19 +41,22 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link position-relative px-3 py-2 fw-medium text-dark" href="{{ route('faq') }}">
-            <i class="fas fa-question-circle me-1 d-lg-none"></i> FAQ
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link position-relative px-3 py-2 fw-medium text-dark" href="{{ route('pricing') }}">
             <i class="fas fa-tags me-1 d-lg-none"></i> Pricing
           </a>
         </li>
       </ul>
 
+
       <!-- Auth Buttons -->
       <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
+       <a href="{{ route('booking') }}"
+        class="btn btn-primary px-4 rounded-pill fw-medium 
+              w-100 w-lg-auto text-nowrap">
+        <i class="fas fa-calendar-check me-2"></i>Book Now
+      </a>
+
+
         @auth
           <div class="dropdown">
             <button class="btn btn-light rounded-pill px-3 d-flex align-items-center gap-2" type="button"

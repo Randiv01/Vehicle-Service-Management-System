@@ -10,13 +10,22 @@
                 </p>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Services -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 fw-bold text-primary">Services</h5>
                 <p><a href="#" class="text-white text-decoration-none">General Service</a></p>
                 <p><a href="#" class="text-white text-decoration-none">Engine Repair</a></p>
                 <p><a href="#" class="text-white text-decoration-none">Tire Replacement</a></p>
                 <p><a href="#" class="text-white text-decoration-none">Diagnostics</a></p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 fw-bold text-primary">Quick Links</h5>
+                <p><a href="{{ route('about') }}" class="text-white text-decoration-none">About Us</a></p>
+                <p><a href="{{ route('faq') }}" class="text-white text-decoration-none">FAQ</a></p>
+                <p><a href="{{ route('pricing') }}" class="text-white text-decoration-none">Pricing</a></p>
+                <p><a href="{{ route('contact') }}" class="text-white text-decoration-none">Contact</a></p>
             </div>
 
             <!-- Contact -->
