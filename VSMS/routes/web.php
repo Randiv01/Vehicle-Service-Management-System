@@ -53,6 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     // Bookings
     Route::get('/bookings', [AdminController::class, 'bookings'])->name('bookings');
+    Route::post('/bookings/create', [AdminController::class, 'createBooking'])->name('bookings.create');
     Route::put('/bookings/{booking}/status', [AdminController::class, 'updateBookingStatus'])->name('bookings.updateStatus');
     
     // Customers

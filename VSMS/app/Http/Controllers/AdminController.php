@@ -68,9 +68,29 @@ class AdminController extends Controller
     }
 
     // Bookings
-    public function bookings()
+    public function bookings(Request $request)
     {
-        $bookings = Booking::with('user')->latest()->paginate(20);
+        $query = Booking::with('user')->latest();
+
+        // Search functionality
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('customer_name', 'like', "%{$search}%")
+                  ->orWhere('customer_email', 'like', "%{$search}%")
+                  ->orWhere('vehicle_make', 'like', "%{$search}%")
+                  ->orWhere('vehicle_model', 'like', "%{$search}%")
+                  ->orWhere('service_type', 'like', "%{$search}%");
+            });
+        }
+
+        // Filter by status
+        if ($request->has('status') && $request->status != '') {
+            $query->where('status', $request->status);
+        }
+
+        $bookings = $query->paginate(20);
+        
         return view('admin.bookings.index', compact('bookings'));
     }
 
@@ -83,6 +103,26 @@ class AdminController extends Controller
         $booking->update($validated);
 
         return redirect()->route('admin.bookings')->with('success', 'Booking status updated!');
+    }
+
+    public function createBooking(Request $request)
+    {
+        $validated = $request->validate([
+            'customer_name' => 'required|string|max:255',
+            'customer_email' => 'required|email|max:255',
+            'customer_phone' => 'required|string|max:20',
+            'vehicle_make' => 'nullable|string|max:255',
+            'vehicle_model' => 'nullable|string|max:255',
+            'service_type' => 'required|string|max:255',
+            'service_date' => 'required|date',
+            'service_time' => 'required',
+            'additional_notes' => 'nullable|string',
+            'status' => 'required|in:pending,confirmed,completed,cancelled',
+        ]);
+
+        Booking::create($validated);
+
+        return redirect()->route('admin.bookings')->with('success', 'Booking created successfully!');
     }
 
     // Customers

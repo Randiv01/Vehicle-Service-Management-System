@@ -29,46 +29,37 @@
                         </tr>
                     </thead>
                     <tbody>
+                    @forelse($customers as $customer)
                         <tr>
                             <td class="ps-4">
                                 <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" class="rounded-circle me-3" width="40" height="40">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 40px; height: 40px;">
+                                        {{ strtoupper(substr($customer->name, 0, 2)) }}
+                                    </div>
                                     <div>
-                                        <div class="fw-bold">John Doe</div>
-                                        <small class="text-muted">Toyota Prius</small>
+                                        <div class="fw-bold">{{ $customer->name }}</div>
+                                        <small class="text-muted">Customer ID: #{{ str_pad($customer->id, 4, '0', STR_PAD_LEFT) }}</small>
                                     </div>
                                 </div>
                             </td>
-                            <td>john@example.com</td>
-                            <td>+94 77 123 4567</td>
-                            <td>Jan 10, 2024</td>
-                            <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
+                            <td>{{ $customer->email }}</td>
+                            <td>{{ $customer->phone ?? 'N/A' }}</td>
+                            <td>{{ $customer->created_at->format('M d, Y') }}</td>
+                            <td><span class="badge bg-success">Active</span></td>
                             <td class="text-end pe-4">
-                                <button class="btn btn-sm btn-outline-primary rounded-circle"><i class="fas fa-envelope"></i></button>
-                                <button class="btn btn-sm btn-outline-secondary rounded-circle ms-1"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-sm btn-light me-1"><i class="fas fa-envelope text-primary"></i></button>
+                                <button class="btn btn-sm btn-light"><i class="fas fa-edit text-secondary"></i></button>
                             </td>
                         </tr>
+                    @empty
                         <tr>
-                            <td class="ps-4">
-                                <div class="d-flex align-items-center">
-                                    <img src="https://ui-avatars.com/api/?name=Alice+Smith&background=random" class="rounded-circle me-3" width="40" height="40">
-                                    <div>
-                                        <div class="fw-bold">Alice Smith</div>
-                                        <small class="text-muted">Honda Civic</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>alice@example.com</td>
-                            <td>+94 71 987 6543</td>
-                            <td>Jan 12, 2024</td>
-                            <td><span class="badge bg-success bg-opacity-10 text-success">Active</span></td>
-                            <td class="text-end pe-4">
-                                <button class="btn btn-sm btn-outline-primary rounded-circle"><i class="fas fa-envelope"></i></button>
-                                <button class="btn btn-sm btn-outline-secondary rounded-circle ms-1"><i class="fas fa-edit"></i></button>
+                            <td colspan="6" class="text-center py-5 text-muted">
+                                <i class="fas fa-users fa-3x mb-3 d-block"></i>
+                                <p class="mb-0">No customers found</p>
                             </td>
                         </tr>
-                        <!-- More rows... -->
-                    </tbody>
+                    @endforelse
+                </tbody>
                 </table>
             </div>
             

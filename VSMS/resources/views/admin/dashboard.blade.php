@@ -21,8 +21,8 @@
                             <i class="fas fa-calendar-check"></i>
                         </div>
                     </div>
-                    <h2 class="mb-0 fw-bold">128</h2>
-                    <small class="text-success"><i class="fas fa-arrow-up me-1"></i>12% from last week</small>
+                    <h2 class="mb-0 fw-bold">{{ $stats['total_bookings'] }}</h2>
+                    <small class="text-muted"><i class="fas fa-calendar me-1"></i>All time</small>
                 </div>
             </div>
         </div>
@@ -36,8 +36,8 @@
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                     </div>
-                    <h2 class="mb-0 fw-bold">LKR 450K</h2>
-                    <small class="text-success"><i class="fas fa-arrow-up me-1"></i>8% from last month</small>
+                    <h2 class="mb-0 fw-bold">LKR {{ number_format($stats['total_revenue']) }}</h2>
+                    <small class="text-muted"><i class="fas fa-chart-line me-1"></i>Estimated</small>
                 </div>
             </div>
         </div>
@@ -51,8 +51,8 @@
                             <i class="fas fa-clock"></i>
                         </div>
                     </div>
-                    <h2 class="mb-0 fw-bold">14</h2>
-                    <small class="text-warning"><i class="fas fa-minus me-1"></i>Same as yesterday</small>
+                    <h2 class="mb-0 fw-bold">{{ $stats['pending_bookings'] }}</h2>
+                    <small class="text-warning"><i class="fas fa-hourglass-half me-1"></i>Awaiting confirmation</small>
                 </div>
             </div>
         </div>
@@ -66,8 +66,8 @@
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
-                    <h2 class="mb-0 fw-bold">856</h2>
-                    <small class="text-success"><i class="fas fa-user-plus me-1"></i>5 new today</small>
+                    <h2 class="mb-0 fw-bold">{{ $stats['total_customers'] }}</h2>
+                    <small class="text-muted"><i class="fas fa-user-check me-1"></i>Registered users</small>
                 </div>
             </div>
         </div>
@@ -92,78 +92,45 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="ps-4 fw-bold">#BK00124</td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">JD</div>
-                                <div>
-                                    <div class="fw-bold">John Doe</div>
-                                    <small class="text-muted">Toyota Prius</small>
+                    @forelse($recentBookings as $booking)
+                        <tr>
+                            <td class="ps-4 fw-bold">#BK{{ str_pad($booking->id, 5, '0', STR_PAD_LEFT) }}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                                        {{ strtoupper(substr($booking->customer_name, 0, 2)) }}
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold">{{ $booking->customer_name }}</div>
+                                        <small class="text-muted">{{ $booking->vehicle_make ?? 'N/A' }} {{ $booking->vehicle_model ?? '' }}</small>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>Oil Change & Filter</td>
-                        <td>Oct 24, 2024</td>
-                        <td><span class="badge bg-warning text-dark">Pending</span></td>
-                        <td class="text-end pe-4">
-                            <button class="btn btn-sm btn-light"><i class="fas fa-eye text-primary"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 fw-bold">#BK00123</td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">AS</div>
-                                <div>
-                                    <div class="fw-bold">Alice Smith</div>
-                                    <small class="text-muted">Honda Civic</small>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Brake Service</td>
-                        <td>Oct 24, 2024</td>
-                        <td><span class="badge bg-success">Confirmed</span></td>
-                        <td class="text-end pe-4">
-                            <button class="btn btn-sm btn-light"><i class="fas fa-eye text-primary"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 fw-bold">#BK00122</td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-info text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">RJ</div>
-                                <div>
-                                    <div class="fw-bold">Robert Johnson</div>
-                                    <small class="text-muted">Nissan Leaf</small>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Detailed Inspection</td>
-                        <td>Oct 23, 2024</td>
-                        <td><span class="badge bg-danger">Cancelled</span></td>
-                        <td class="text-end pe-4">
-                            <button class="btn btn-sm btn-light"><i class="fas fa-eye text-primary"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="ps-4 fw-bold">#BK00121</td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">MK</div>
-                                <div>
-                                    <div class="fw-bold">Maria Kate</div>
-                                    <small class="text-muted">BMW 320i</small>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Engine Diagnostics</td>
-                        <td>Oct 23, 2024</td>
-                        <td><span class="badge bg-success">Completed</span></td>
-                        <td class="text-end pe-4">
-                            <button class="btn btn-sm btn-light"><i class="fas fa-eye text-primary"></i></button>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>{{ $booking->service_type }}</td>
+                            <td>{{ $booking->service_date->format('M d, Y') }}</td>
+                            <td>
+                                @if($booking->status === 'pending')
+                                    <span class="badge bg-warning text-dark">Pending</span>
+                                @elseif($booking->status === 'confirmed')
+                                    <span class="badge bg-success">Confirmed</span>
+                                @elseif($booking->status === 'completed')
+                                    <span class="badge bg-info">Completed</span>
+                                @else
+                                    <span class="badge bg-danger">Cancelled</span>
+                                @endif
+                            </td>
+                            <td class="text-end pe-4">
+                                <a href="{{ route('admin.bookings') }}" class="btn btn-sm btn-light"><i class="fas fa-eye text-primary"></i></a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="text-center py-5 text-muted">
+                                <i class="fas fa-inbox fa-3x mb-3 d-block"></i>
+                                <p class="mb-0">No bookings yet</p>
+                            </td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
