@@ -17,7 +17,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-primary bg-opacity-10 text-primary"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-oil-can"></i>
                     </div>
                     <h4 class="mb-3">Oil Change & Filter</h4>
@@ -33,7 +34,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-danger bg-opacity-10 text-danger rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-danger bg-opacity-10 text-danger"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-car-burst"></i>
                     </div>
                     <h4 class="mb-3">Brake Service & Repair</h4>
@@ -49,7 +51,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-warning bg-opacity-10 text-warning rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-warning bg-opacity-10 text-warning"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-laptop-medical"></i>
                     </div>
                     <h4 class="mb-3">Engine Diagnostics</h4>
@@ -65,7 +68,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-info bg-opacity-10 text-info rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-info bg-opacity-10 text-info"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-wind"></i>
                     </div>
                     <h4 class="mb-3">AC Service & Repair</h4>
@@ -81,8 +85,9 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-success bg-opacity-10 text-success rounded-circle mb-4 mx-auto">
-                        <i class="fas fa-tire"></i>
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-success bg-opacity-10 text-success"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
+                        <i class="fas fa-compact-disc"></i>
                     </div>
                     <h4 class="mb-3">Tire Service</h4>
                     <p class="text-muted mb-3">Rotation, balancing, alignment, and puncture repair services with top-quality tire brands.</p>
@@ -96,7 +101,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-secondary bg-opacity-10 text-secondary rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-secondary bg-opacity-10 text-secondary"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-car-battery"></i>
                     </div>
                     <h4 class="mb-3">Battery Service</h4>
@@ -112,7 +118,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-primary bg-opacity-10 text-primary"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-gears"></i>
                     </div>
                     <h4 class="mb-3">Transmission Service</h4>
@@ -128,7 +135,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-danger bg-opacity-10 text-danger rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-danger bg-opacity-10 text-danger"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-car-side"></i>
                     </div>
                     <h4 class="mb-3">Suspension Repair</h4>
@@ -144,7 +152,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-warning bg-opacity-10 text-warning rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-warning bg-opacity-10 text-warning"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h4 class="mb-3">Electrical System</h4>
@@ -160,7 +169,8 @@
         <div class="col-md-6 col-lg-4">
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
-                    <div class="icon-xl bg-secondary bg-opacity-10 text-secondary rounded-circle mb-4 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-4 mx-auto bg-secondary bg-opacity-10 text-secondary"
+                         style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="fas fa-screwdriver-wrench"></i>
                     </div>
                     <h4 class="mb-3">General Maintenance</h4>
@@ -182,7 +192,8 @@
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center p-4">
-                    <div class="icon-lg bg-primary text-white rounded-circle mb-3 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-3 mx-auto bg-primary text-white"
+                         style="width: 60px; height: 60px; font-size: 1.5rem;">
                         <i class="fas fa-award"></i>
                     </div>
                     <h4 class="h5">Certified Technicians</h4>
@@ -195,7 +206,8 @@
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center p-4">
-                    <div class="icon-lg bg-success text-white rounded-circle mb-3 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-3 mx-auto bg-success text-white"
+                         style="width: 60px; height: 60px; font-size: 1.5rem;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h4 class="h5">12-Month Warranty</h4>
@@ -208,7 +220,8 @@
         <div class="col-md-4 mb-4">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body text-center p-4">
-                    <div class="icon-lg bg-warning text-dark rounded-circle mb-3 mx-auto">
+                    <div class="d-flex align-items-center justify-content-center rounded-circle mb-3 mx-auto bg-warning text-dark"
+                         style="width: 60px; height: 60px; font-size: 1.5rem;">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h4 class="h5">Modern Equipment</h4>

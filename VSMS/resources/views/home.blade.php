@@ -169,9 +169,9 @@
             </div>
 
             <div class="row g-5 align-items-center mb-5">
-                <div class="col-lg-6">
+                <div class="col-lg-6 h-100">
                     <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Professional Auto Service" class="img-fluid rounded-4 shadow-lg">
+                         alt="Professional Auto Service" class="img-fluid rounded-4 shadow-lg w-100 h-100" style="object-fit: cover; min-height: 400px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="ps-lg-4">
