@@ -43,6 +43,27 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
 });
 
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/services', function () {
+        return view('admin.services.index');
+    })->name('services');
+
+    Route::get('/bookings', function () {
+        return view('admin.bookings.index');
+    })->name('bookings');
+
+    Route::get('/customers', function () {
+        return view('admin.customers.index');
+    })->name('customers');
+});
+
+
+
 // Protected routes (require authentication)
 Route::middleware('auth')->group(function () {
     // Logout Route
