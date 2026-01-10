@@ -98,7 +98,7 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Full Name <span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" required id="customerName">
+                                                <input type="text" class="form-control" required id="customerName" value="{{ auth()->user()->name ?? '' }}">
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Phone Number <span
@@ -110,7 +110,7 @@
                                         <div class="mb-3">
                                             <label class="form-label">Email Address <span
                                                     class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" required id="customerEmail">
+                                            <input type="email" class="form-control" required id="customerEmail" value="{{ auth()->user()->email ?? '' }}">
                                         </div>
 
                                         <div class="row g-3">

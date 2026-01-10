@@ -28,9 +28,7 @@ Route::get('/pricing', function () {
     return view('pages.pricing');
 })->name('pricing');
 
-Route::get('/booking', function () {
-    return view('pages.booking');
-})->name('booking');
+
 
 // Authentication Routes
 Route::middleware('guest')->group(function () {
@@ -73,4 +71,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // Booking Route
+    Route::get('/booking', function () {
+        return view('pages.booking');
+    })->name('booking');
 });

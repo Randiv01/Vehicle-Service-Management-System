@@ -40,10 +40,13 @@
                             <label for="email">Email Address</label>
                         </div>
 
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3 position-relative">
                             <input type="password" class="form-control rounded-3" id="password" name="password"
                                 placeholder="Password" required>
                             <label for="password">Password</label>
+                            <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" onclick="togglePassword('password', this)">
+                                <i class="fas fa-eye text-muted"></i>
+                            </span>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -71,4 +74,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function togglePassword(inputId, iconSpan) {
+            const input = document.getElementById(inputId);
+            const icon = iconSpan.querySelector('i');
+            
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = "password";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
 @endsection
