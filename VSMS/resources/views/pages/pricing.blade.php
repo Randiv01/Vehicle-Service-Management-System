@@ -44,9 +44,9 @@
         <!-- Premium Package (Featured) -->
         <div class="col-lg-4">
             <div class="card pricing-card featured shadow-lg h-100 border-3 border-primary rounded-4 overflow-hidden position-relative"
-                style="transform: scale(1.05);">
-                <div class="position-absolute top-0 start-50 translate-middle">
-                    <span class="badge bg-warning text-dark px-4 py-2 fw-bold">MOST POPULAR</span>
+                style="transform: scale(1.05); margin-top: 2rem;">
+                <div class="position-absolute start-50 translate-middle" style="z-index: 10; top: -15px;">
+                    <span class="badge px-4 py-2" style="background-color: #ff9800; color: #ffffff !important; font-weight: 700; font-size: 0.85rem;">MOST POPULAR</span>
                 </div>
                 <div class="text-center p-4 text-white"
                     style="background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);">

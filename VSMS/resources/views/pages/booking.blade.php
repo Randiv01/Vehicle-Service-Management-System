@@ -58,7 +58,7 @@
     </section>
 
     <!-- Book Service Section -->
-    <section id="book-service" class="py-7 bg-light">
+    <section id="book-service" class="py-7 bg-light mt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
@@ -93,30 +93,50 @@
                             <div class="col-md-7">
                                 <div class="card-body p-4 p-lg-5">
                                     <h3 class="fw-bold mb-4">Book Your Service</h3>
-                                    <form id="bookingForm">
+
+                                    @if(session('success'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ session('success') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        </div>
+                                    @endif
+
+                                    @if($errors->any())
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <ul class="mb-0">
+                                                @foreach($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        </div>
+                                    @endif
+
+                                    <form action="{{ route('booking.store') }}" method="POST">
+                                        @csrf
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <label class="form-label">Full Name <span
                                                         class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" required id="customerName" value="{{ auth()->user()->name ?? '' }}">
+                                                <input type="text" class="form-control" required name="customer_name" value="{{ auth()->user()->name ?? old('customer_name') }}">
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Phone Number <span
                                                         class="text-danger">*</span></label>
-                                                <input type="tel" class="form-control" required id="customerPhone">
+                                                <input type="tel" class="form-control" required name="customer_phone" value="{{ old('customer_phone') }}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Email Address <span
                                                     class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" required id="customerEmail" value="{{ auth()->user()->email ?? '' }}">
+                                            <input type="email" class="form-control" required name="customer_email" value="{{ auth()->user()->email ?? old('customer_email') }}">
                                         </div>
 
                                         <div class="row g-3">
                                             <div class="col-md-6">
                                                 <label class="form-label">Vehicle Make</label>
-                                                <select class="form-select" id="vehicleMake">
+                                                <select class="form-select" name="vehicle_make">
                                                     <option value="" selected>Select Make</option>
                                                     <option value="Toyota">Toyota</option>
                                                     <option value="Honda">Honda</option>
@@ -129,14 +149,14 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Model</label>
                                                 <input type="text" class="form-control" placeholder="e.g., Corolla"
-                                                    id="vehicleModel">
+                                                    name="vehicle_model" value="{{ old('vehicle_model') }}">
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Service Type <span
                                                     class="text-danger">*</span></label>
-                                            <select class="form-select" required id="serviceType">
+                                            <select class="form-select" required name="service_type">
                                                 <option value="" selected>Select Service</option>
                                                 <option value="Oil Change & Filter">Oil Change & Filter</option>
                                                 <option value="Brake Service">Brake Service</option>
@@ -153,13 +173,13 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Preferred Date <span
                                                         class="text-danger">*</span></label>
-                                                <input type="date" class="form-control" required id="serviceDate"
-                                                    min="{{ date('Y-m-d') }}">
+                                                <input type="date" class="form-control" required name="service_date"
+                                                    min="{{ date('Y-m-d') }}" value="{{ old('service_date') }}">
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Preferred Time <span
                                                         class="text-danger">*</span></label>
-                                                <select class="form-select" required id="serviceTime">
+                                                <select class="form-select" required name="service_time">
                                                     <option value="" selected>Select Time</option>
                                                     <option value="09:00">9:00 AM</option>
                                                     <option value="10:00">10:00 AM</option>
@@ -174,8 +194,8 @@
 
                                         <div class="mb-4">
                                             <label class="form-label">Additional Notes</label>
-                                            <textarea class="form-control" rows="3" id="additionalNotes"
-                                                placeholder="Please describe any issues or special requests..."></textarea>
+                                            <textarea class="form-control" rows="3" name="additional_notes"
+                                                placeholder="Please describe any issues or special requests...">{{ old('additional_notes') }}</textarea>
                                         </div>
 
                                         <div class="d-grid">
@@ -266,18 +286,11 @@
             const urlParams = new URLSearchParams(window.location.search);
             const service = urlParams.get('service');
             if (service) {
-                const serviceTypeSelect = document.getElementById('serviceType');
+                const serviceTypeSelect = document.querySelector('select[name="service_type"]');
                 if (serviceTypeSelect) {
                     serviceTypeSelect.value = service;
                 }
             }
-        });
-
-        // Handle form submission (same as home page but on this dedicated page)
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Booking confirmed! We will contact you soon.');
-            this.reset();
         });
     </script>
 @endpush

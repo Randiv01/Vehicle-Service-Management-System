@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
 
 // Public routes
 Route::get('/', function () {
@@ -28,8 +30,6 @@ Route::get('/pricing', function () {
     return view('pages.pricing');
 })->name('pricing');
 
-
-
 // Authentication Routes
 Route::middleware('guest')->group(function () {
     // Login Routes
@@ -43,24 +43,21 @@ Route::middleware('guest')->group(function () {
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
-
-    Route::get('/services', function () {
-        return view('admin.services.index');
-    })->name('services');
-
-    Route::get('/bookings', function () {
-        return view('admin.bookings.index');
-    })->name('bookings');
-
-    Route::get('/customers', function () {
-        return view('admin.customers.index');
-    })->name('customers');
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    
+    // Services CRUD
+    Route::get('/services', [AdminController::class, 'services'])->name('services');
+    Route::post('/services', [AdminController::class, 'storeService'])->name('services.store');
+    Route::put('/services/{service}', [AdminController::class, 'updateService'])->name('services.update');
+    Route::delete('/services/{service}', [AdminController::class, 'deleteService'])->name('services.delete');
+    
+    // Bookings
+    Route::get('/bookings', [AdminController::class, 'bookings'])->name('bookings');
+    Route::put('/bookings/{booking}/status', [AdminController::class, 'updateBookingStatus'])->name('bookings.updateStatus');
+    
+    // Customers
+    Route::get('/customers', [AdminController::class, 'customers'])->name('customers');
 });
-
-
 
 // Protected routes (require authentication)
 Route::middleware('auth')->group(function () {
@@ -72,8 +69,9 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // Booking Route
+    // Booking Routes
     Route::get('/booking', function () {
         return view('pages.booking');
     })->name('booking');
+    Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 });
