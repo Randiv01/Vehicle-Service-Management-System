@@ -130,11 +130,7 @@
                     ['icon' => 'fa-oil-can', 'title' => 'Oil Change & Filter', 'desc' => 'Regular oil changes extend engine life and improve performance.', 'price' => '$49.99', 'color' => 'primary'],
                     ['icon' => 'fa-car-burst', 'title' => 'Brake Service', 'desc' => 'Complete brake inspection, pad replacement, and rotor resurfacing.', 'price' => '$89.99', 'color' => 'danger'],
                     ['icon' => 'fa-laptop-medical', 'title' => 'Engine Diagnostics', 'desc' => 'Advanced computer diagnostics to identify and fix engine problems.', 'price' => '$79.99', 'color' => 'warning'],
-                    ['icon' => 'fa-wind', 'title' => 'AC Service', 'desc' => 'Keep cool with our AC recharge, leak detection, and repair services.', 'price' => '$99.99', 'color' => 'info'],
-                    ['icon' => 'fa-battery-full', 'title' => 'Battery Service', 'desc' => 'Battery testing, replacement, and electrical system diagnostics.', 'price' => '$69.99', 'color' => 'success'],
-                    ['icon' => 'fa-tire', 'title' => 'Tire Service', 'desc' => 'Tire rotation, balancing, alignment, and puncture repair services.', 'price' => '$39.99', 'color' => 'dark'],
-                    ['icon' => 'fa-oil-well', 'title' => 'Transmission Service', 'desc' => 'Fluid changes, repairs, and maintenance for automatic & manual transmissions.', 'price' => '$149.99', 'color' => 'secondary'],
-                    ['icon' => 'fa-screwdriver-wrench', 'title' => 'General Maintenance', 'desc' => 'Comprehensive vehicle inspection and preventative maintenance.', 'price' => '$59.99', 'color' => 'primary']
+                    ['icon' => 'fa-wind', 'title' => 'AC Service', 'desc' => 'Keep cool with our AC recharge, leak detection, and repair services.', 'price' => '$99.99', 'color' => 'info']
                 ] as $index => $service)
                 <div class="col-md-6 col-lg-3" data-service-index="{{ $index }}">
                     <div class="card border-0 shadow-sm h-100">

@@ -82,12 +82,11 @@
             <div class="card border-0 shadow-sm h-100 hover-lift">
                 <div class="card-body p-4 text-center">
                     <div class="icon-xl bg-success bg-opacity-10 text-success rounded-circle mb-4 mx-auto">
-                        <i class="fas fa-tire-rugged"></i>
+                        <i class="fas fa-tire"></i>
                     </div>
                     <h4 class="mb-3">Tire Service</h4>
-                    <p class="text-muted mb-3">Rotation, balancing, alignment, and replacement with top-quality tire brands
-                        at competitive prices.</p>
-                    <div class="text-primary fw-bold mb-3">From $59.99</div>
+                    <p class="text-muted mb-3">Rotation, balancing, alignment, and puncture repair services with top-quality tire brands.</p>
+                    <div class="text-primary fw-bold mb-3">From $39.99</div>
                     <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
@@ -152,6 +151,21 @@
                     <p class="text-muted mb-3">Electrical diagnostics, wiring repairs, alternator replacement, and component
                         services.</p>
                     <div class="text-primary fw-bold mb-3">From $89.99</div>
+                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- General Maintenance -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card border-0 shadow-sm h-100 hover-lift">
+                <div class="card-body p-4 text-center">
+                    <div class="icon-xl bg-secondary bg-opacity-10 text-secondary rounded-circle mb-4 mx-auto">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4 class="mb-3">General Maintenance</h4>
+                    <p class="text-muted mb-3">Comprehensive vehicle inspection and preventative maintenance services.</p>
+                    <div class="text-primary fw-bold mb-3">From $59.99</div>
                     <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
