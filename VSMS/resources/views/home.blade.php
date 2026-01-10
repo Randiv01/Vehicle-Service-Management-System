@@ -346,5 +346,5 @@
 @endsection
 
 @push('scripts')
-    @vite('resources/js/home.js')
+    {{-- @vite('resources/js/home.js') --}}
 @endpush
