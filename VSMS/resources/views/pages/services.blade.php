@@ -24,8 +24,8 @@
                     <h4 class="mb-3">Oil Change & Filter</h4>
                     <p class="text-muted mb-3">Regular oil changes extend engine life and improve performance with premium
                         synthetic oils and genuine filters.</p>
-                    <div class="text-primary fw-bold mb-3">From $49.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 15,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -41,8 +41,8 @@
                     <h4 class="mb-3">Brake Service & Repair</h4>
                     <p class="text-muted mb-3">Complete brake inspection, pad replacement, rotor resurfacing, and complete
                         brake system repairs.</p>
-                    <div class="text-primary fw-bold mb-3">From $89.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 27,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -58,8 +58,8 @@
                     <h4 class="mb-3">Engine Diagnostics</h4>
                     <p class="text-muted mb-3">Advanced computer diagnostics using state-of-the-art equipment to identify
                         and fix engine problems quickly.</p>
-                    <div class="text-primary fw-bold mb-3">From $79.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 24,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -75,8 +75,8 @@
                     <h4 class="mb-3">AC Service & Repair</h4>
                     <p class="text-muted mb-3">Keep cool with our AC recharge, leak detection, compressor repair, and
                         complete AC system services.</p>
-                    <div class="text-primary fw-bold mb-3">From $99.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 30,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -91,8 +91,8 @@
                     </div>
                     <h4 class="mb-3">Tire Service</h4>
                     <p class="text-muted mb-3">Rotation, balancing, alignment, and puncture repair services with top-quality tire brands.</p>
-                    <div class="text-primary fw-bold mb-3">From $39.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 12,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -108,8 +108,8 @@
                     <h4 class="mb-3">Battery Service</h4>
                     <p class="text-muted mb-3">Battery testing, replacement, charging system inspection, and terminal
                         cleaning services.</p>
-                    <div class="text-primary fw-bold mb-3">From $69.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 21,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -125,8 +125,8 @@
                     <h4 class="mb-3">Transmission Service</h4>
                     <p class="text-muted mb-3">Fluid changes, filter replacement, complete transmission diagnostics and
                         comprehensive repairs.</p>
-                    <div class="text-primary fw-bold mb-3">From $149.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 45,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -142,8 +142,8 @@
                     <h4 class="mb-3">Suspension Repair</h4>
                     <p class="text-muted mb-3">Shock and strut replacement, alignment correction for a smooth and
                         comfortable ride.</p>
-                    <div class="text-primary fw-bold mb-3">From $199.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 60,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -159,8 +159,8 @@
                     <h4 class="mb-3">Electrical System</h4>
                     <p class="text-muted mb-3">Electrical diagnostics, wiring repairs, alternator replacement, and component
                         services.</p>
-                    <div class="text-primary fw-bold mb-3">From $89.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 27,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>
@@ -175,8 +175,8 @@
                     </div>
                     <h4 class="mb-3">General Maintenance</h4>
                     <p class="text-muted mb-3">Comprehensive vehicle inspection and preventative maintenance services.</p>
-                    <div class="text-primary fw-bold mb-3">From $59.99</div>
-                    <a href="{{ route('contact') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
+                    <div class="text-primary fw-bold mb-3">From LKR 18,000</div>
+                    <a href="{{ route('booking') }}" class="btn btn-outline-primary rounded-pill px-4">Book Now</a>
                 </div>
             </div>
         </div>

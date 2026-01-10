@@ -19,7 +19,7 @@
                 <div class="text-center p-4 text-white"
                     style="background: linear-gradient(135deg, #00bcd4 0%, #00acc1 100%);">
                     <h3 class="fw-bold mb-3">Basic Care</h3>
-                    <div class="display-4 fw-bold mb-2">$99</div>
+                    <div class="display-4 fw-bold mb-2">LKR 30,000</div>
                     <p class="mb-0 opacity-90">Per Visit</p>
                 </div>
                 <div class="card-body p-4">
@@ -51,7 +51,7 @@
                 <div class="text-center p-4 text-white"
                     style="background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);">
                     <h3 class="fw-bold mb-3">Premium Care</h3>
-                    <div class="display-4 fw-bold mb-2">$199</div>
+                    <div class="display-4 fw-bold mb-2">LKR 60,000</div>
                     <p class="mb-0 opacity-90">Per Visit</p>
                 </div>
                 <div class="card-body p-4">
@@ -81,7 +81,7 @@
                 <div class="text-center p-4 text-white"
                     style="background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);">
                     <h3 class="fw-bold mb-3">Ultimate Care</h3>
-                    <div class="display-4 fw-bold mb-2">$349</div>
+                    <div class="display-4 fw-bold mb-2">LKR 100,000</div>
                     <p class="mb-0 opacity-90">Annual Plan</p>
                 </div>
                 <div class="card-body p-4">

@@ -3,7 +3,10 @@
         <div class="row text-center text-md-start">
             <!-- Company Info -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 fw-bold text-primary">MotorCare</h5>
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-4">
+                    <img src="{{ asset('images/MotorCare.png') }}" alt="MotorCare Logo" height="40" class="me-2">
+                    <h5 class="text-uppercase fw-bold text-primary mb-0">MotorCare</h5>
+                </div>
                 <p>
                     Your trusted partner in vehicle maintenance and repair. We ensure your ride is always smooth and
                     safe.

@@ -127,10 +127,10 @@
 
             <div class="row g-4 mb-5">
                 @foreach([
-                    ['icon' => 'fa-oil-can', 'title' => 'Oil Change & Filter', 'desc' => 'Regular oil changes extend engine life and improve performance.', 'price' => '$49.99', 'color' => 'primary'],
-                    ['icon' => 'fa-car-burst', 'title' => 'Brake Service', 'desc' => 'Complete brake inspection, pad replacement, and rotor resurfacing.', 'price' => '$89.99', 'color' => 'danger'],
-                    ['icon' => 'fa-laptop-medical', 'title' => 'Engine Diagnostics', 'desc' => 'Advanced computer diagnostics to identify and fix engine problems.', 'price' => '$79.99', 'color' => 'warning'],
-                    ['icon' => 'fa-wind', 'title' => 'AC Service', 'desc' => 'Keep cool with our AC recharge, leak detection, and repair services.', 'price' => '$99.99', 'color' => 'info']
+                    ['icon' => 'fa-oil-can', 'title' => 'Oil Change & Filter', 'desc' => 'Regular oil changes extend engine life and improve performance.', 'price' => 'LKR 15,000', 'color' => 'primary'],
+                    ['icon' => 'fa-car-burst', 'title' => 'Brake Service', 'desc' => 'Complete brake inspection, pad replacement, and rotor resurfacing.', 'price' => 'LKR 27,000', 'color' => 'danger'],
+                    ['icon' => 'fa-laptop-medical', 'title' => 'Engine Diagnostics', 'desc' => 'Advanced computer diagnostics to identify and fix engine problems.', 'price' => 'LKR 24,000', 'color' => 'warning'],
+                    ['icon' => 'fa-wind', 'title' => 'AC Service', 'desc' => 'Keep cool with our AC recharge, leak detection, and repair services.', 'price' => 'LKR 30,000', 'color' => 'info']
                 ] as $index => $service)
                 <div class="col-md-6 col-lg-3" data-service-index="{{ $index }}">
                     <div class="card border-0 shadow-sm h-100">
@@ -142,9 +142,9 @@
                             <h4 class="h5 mb-3 fw-bold">{{ $service['title'] }}</h4>
                             <p class="text-muted mb-3 small">{{ $service['desc'] }}</p>
                             <div class="text-primary fw-bold fs-5">From {{ $service['price'] }}</div>
-                            <button class="btn btn-sm btn-outline-primary mt-3 rounded-pill px-4 quick-book-btn" data-service="{{ $service['title'] }}">
-                                Quick Book
-                            </button>
+                            <a href="{{ route('booking') }}" class="btn btn-sm btn-outline-primary mt-3 rounded-pill px-4">
+                                Book Now
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -169,9 +169,9 @@
             </div>
 
             <div class="row g-5 align-items-center mb-5">
-                <div class="col-lg-6 h-100">
-                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Professional Auto Service" class="img-fluid rounded-4 shadow-lg w-100 h-100" style="object-fit: cover; min-height: 400px;">
+                <div class="col-lg-6">
+                    <img src="{{ asset('hero 2.jpg') }}" 
+                         alt="Professional Auto Service" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; height: 350px;">
                 </div>
                 <div class="col-lg-6">
                     <div class="ps-lg-4">
@@ -299,16 +299,14 @@
                     <div class="card border-0 shadow-lg overflow-hidden rounded-4">
                         <div class="card-body p-0">
                             <div class="ratio ratio-16x9">
-                                <div class="bg-dark d-flex align-items-center justify-content-center">
-                                    <button class="btn btn-warning rounded-circle play-video-btn shadow-lg" 
-                                            style="width: 80px; height: 80px;">
-                                        <i class="fas fa-play fa-2x ps-1"></i>
-                                    </button>
-                                </div>
+                                <video autoplay muted loop playsinline controls class="object-fit-cover">
+                                    <source src="{{ asset('video/MotorCareVido.mp4') }}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                             <div class="p-4 text-center bg-white">
-                                <h5 class="fw-bold mb-1">Customer Experience Video</h5>
-                                <p class="text-muted mb-0 small">See what our customers have to say about their experience</p>
+                                <h5 class="fw-bold mb-1">Company Introduction</h5>
+                                <p class="text-muted mb-0 small">Learn a little about our company and services</p>
                             </div>
                         </div>
                     </div>
