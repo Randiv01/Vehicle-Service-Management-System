@@ -42,7 +42,7 @@ Route::middleware('guest')->group(function () {
 });
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     
     // Services CRUD
@@ -58,6 +58,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     // Customers
     Route::get('/customers', [AdminController::class, 'customers'])->name('customers');
+    Route::post('/customers/create', [AdminController::class, 'createCustomer'])->name('customers.create');
+    Route::put('/customers/{customer}', [AdminController::class, 'updateCustomer'])->name('customers.update');
+    Route::delete('/customers/{customer}', [AdminController::class, 'deleteCustomer'])->name('customers.delete');
+
+    // Admins
+    Route::get('/admins', [AdminController::class, 'admins'])->name('admins');
+    Route::post('/admins/create', [AdminController::class, 'createAdmin'])->name('admins.create');
+    Route::put('/admins/{admin}', [AdminController::class, 'updateAdmin'])->name('admins.update');
+    Route::delete('/admins/{admin}', [AdminController::class, 'deleteAdmin'])->name('admins.delete');
 });
 
 // Protected routes (require authentication)

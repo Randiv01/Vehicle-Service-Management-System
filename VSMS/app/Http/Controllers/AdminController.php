@@ -25,9 +25,20 @@ class AdminController extends Controller
     }
 
     // Services
-    public function services()
+    public function services(Request $request)
     {
-        $services = Service::latest()->paginate(10);
+        $query = Service::latest();
+
+        // Search functionality
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        $services = $query->paginate(10);
         return view('admin.services.index', compact('services'));
     }
 
@@ -126,9 +137,141 @@ class AdminController extends Controller
     }
 
     // Customers
-    public function customers()
+    public function customers(Request $request)
     {
-        $customers = User::where('role', 'customer')->latest()->paginate(20);
+        $query = User::where('role', 'customer')->latest();
+
+        // Search functionality
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        $customers = $query->paginate(20);
+        
         return view('admin.customers.index', compact('customers'));
+    }
+
+    public function createCustomer(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+        ]);
+
+        $validated['password'] = bcrypt($validated['password']);
+        $validated['role'] = 'customer';
+
+        User::create($validated);
+
+        return redirect()->route('admin.customers')->with('success', 'Customer created successfully!');
+    }
+
+    public function updateCustomer(Request $request, User $customer)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $customer->id,
+            'password' => 'nullable|min:8',
+        ]);
+
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+        ];
+
+        if (!empty($validated['password'])) {
+            $data['password'] = bcrypt($validated['password']);
+        }
+
+        $customer->update($data);
+
+        return redirect()->route('admin.customers')->with('success', 'Customer updated successfully!');
+    }
+
+    public function deleteCustomer(User $customer)
+    {
+        $customer->delete();
+        return redirect()->route('admin.customers')->with('success', 'Customer deleted successfully!');
+    }
+
+    // Admins
+    public function admins(Request $request)
+    {
+        $query = User::where('role', 'admin')->latest();
+
+        // Search functionality
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        $admins = $query->paginate(20);
+        
+        return view('admin.admins.index', compact('admins'));
+    }
+
+    public function createAdmin(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+        ]);
+
+        if (!str_ends_with($validated['email'], '@motorcare.com')) {
+            return redirect()->back()->withErrors(['email' => 'Admin emails must end with @motorcare.com'])->withInput();
+        }
+
+        $validated['password'] = bcrypt($validated['password']);
+        $validated['role'] = 'admin';
+
+        User::create($validated);
+
+        return redirect()->route('admin.admins')->with('success', 'Admin created successfully!');
+    }
+
+    public function updateAdmin(Request $request, User $admin)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . $admin->id,
+            'password' => 'nullable|min:8',
+        ]);
+
+        if (!str_ends_with($validated['email'], '@motorcare.com')) {
+            return redirect()->back()->withErrors(['email' => 'Admin emails must end with @motorcare.com'])->withInput();
+        }
+
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+        ];
+
+        if (!empty($validated['password'])) {
+            $data['password'] = bcrypt($validated['password']);
+        }
+
+        $admin->update($data);
+
+        return redirect()->route('admin.admins')->with('success', 'Admin updated successfully!');
+    }
+
+    public function deleteAdmin(User $admin)
+    {
+        // Don't allow deleting self
+        if (auth()->id() === $admin->id) {
+            return redirect()->route('admin.admins')->with('error', 'You cannot delete yourself!');
+        }
+
+        $admin->delete();
+        return redirect()->route('admin.admins')->with('success', 'Admin deleted successfully!');
     }
 }

@@ -32,6 +32,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
+            $user = Auth::user();
+
+            // Redirect based on role and domain
+            if ($user->role === 'admin' && str_ends_with($user->email, '@motorcare.com')) {
+                return redirect()->route('admin.dashboard')
+                    ->with('success', 'Admin login successful!');
+            }
 
             return redirect()->intended('dashboard')
                 ->with('success', 'Successfully logged in!');
@@ -58,11 +65,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Password::min(8)
-                ->letters()
-                ->mixedCase()
-                ->numbers()
-                ->symbols()],
+            'password' => ['required', 'confirmed', Password::min(8)],
         ], [
             'password.confirmed' => 'The password confirmation does not match.',
             'password.min' => 'The password must be at least 8 characters.',
@@ -75,13 +78,25 @@ class AuthController extends Controller
                 ->withInput();
         }
 
+        // Enforce domain check for admin role from public registration (optional but safer)
+        $role = 'customer';
+        if (str_ends_with($request->email, '@motorcare.com')) {
+            $role = 'admin';
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $role,
         ]);
 
         Auth::login($user);
+
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard')
+                ->with('success', 'Admin registration successful!');
+        }
 
         return redirect()->route('dashboard')
             ->with('success', 'Registration successful! Welcome to MotorCare.');

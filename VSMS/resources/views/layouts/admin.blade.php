@@ -113,6 +113,9 @@
                 <a href="{{ route('admin.customers') }}" class="sidebar-link {{ request()->routeIs('admin.customers*') ? 'active' : '' }}">
                     <i class="fas fa-users"></i> Customers
                 </a>
+                <a href="{{ route('admin.admins') }}" class="sidebar-link {{ request()->routeIs('admin.admins*') ? 'active' : '' }}">
+                    <i class="fas fa-user-shield"></i> Admins
+                </a>
                 <div class="mt-4 border-top border-secondary pt-3">
                     <a href="{{ url('/') }}" class="sidebar-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> Visit Site
@@ -132,7 +135,7 @@
                             <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
                                 <i class="fas fa-user-shield"></i>
                             </div>
-                            <span class="d-none d-sm-inline">Admin User</span>
+                            <span class="d-none d-sm-inline">{{ auth()->user()->name }}</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="#"><i class="fas fa-user-cog me-2"></i>Profile</a></li>
