@@ -66,9 +66,8 @@
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3" aria-labelledby="userDropdown">
               <li><span class="dropdown-item fw-medium">{{ Auth::user()->name }}</span></li>
-              <li><a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fas fa-user me-2"></i>Profile</a>
-              </li>
-              <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+              <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fas fa-user-circle me-2 text-primary"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fas fa-cog me-2"></i>Account Settings</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>

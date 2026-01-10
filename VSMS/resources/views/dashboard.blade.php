@@ -11,19 +11,19 @@
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2 class="h4 mb-0 fw-bold text-primary">Dashboard</h2>
                         <div class="d-flex gap-2">
-                            <a href="#" class="btn btn-outline-primary btn-sm">
-                                <i class="fas fa-cog me-1"></i> Settings
+                            <a href="{{ route('profile.edit') }}" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                                <i class="fas fa-user-circle me-1"></i> My Profile
                             </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3">
                                     <i class="fas fa-sign-out-alt me-1"></i> Logout
                                 </button>
                             </form>
                         </div>
                     </div>
 
-                    <div class="alert alert-info">
+                    <div class="alert alert-info border-0 shadow-sm rounded-3" style="background-color: #e0f7fa; color: #006064;">
                         <i class="fas fa-info-circle me-2"></i>
                         Welcome back, <strong>{{ Auth::user()->name }}</strong>! You're logged in.
                     </div>
@@ -31,40 +31,40 @@
                     <div class="row g-4 mt-2">
                         <!-- Quick Stats -->
                         <div class="col-md-4">
-                            <div class="card border-0 rounded-3 shadow-sm h-100">
+                            <div class="card border-0 rounded-4 shadow-sm h-100">
                                 <div class="card-body text-center p-4">
                                     <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                         <i class="fas fa-car text-primary fs-4"></i>
                                     </div>
-                                    <h5 class="card-title mb-1">My Vehicles</h5>
+                                    <h5 class="card-title fw-bold mb-1">My Vehicles</h5>
                                     <p class="text-muted small mb-3">Manage your vehicles</p>
-                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-3">View All</a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary rounded-pill px-4">View All</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <div class="card border-0 rounded-3 shadow-sm h-100">
+                            <div class="card border-0 rounded-4 shadow-sm h-100">
                                 <div class="card-body text-center p-4">
                                     <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                                        <i class="fas fa-calendar-check text-success fs-4"></i>
+                                        <i class="fas fa-calendar-alt text-success fs-4"></i>
                                     </div>
-                                    <h5 class="card-title mb-1">Upcoming Services</h5>
+                                    <h5 class="card-title fw-bold mb-1">Upcoming Services</h5>
                                     <p class="text-muted small mb-3">View scheduled services</p>
-                                    <a href="#" class="btn btn-sm btn-outline-success rounded-pill px-3">View Schedule</a>
+                                    <a href="#" class="btn btn-sm btn-outline-success rounded-pill px-4">View Schedule</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <div class="card border-0 rounded-3 shadow-sm h-100">
+                            <div class="card border-0 rounded-4 shadow-sm h-100">
                                 <div class="card-body text-center p-4">
                                     <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
                                         <i class="fas fa-history text-warning fs-4"></i>
                                     </div>
-                                    <h5 class="card-title mb-1">Service History</h5>
+                                    <h5 class="card-title fw-bold mb-1">Service History</h5>
                                     <p class="text-muted small mb-3">Past services & records</p>
-                                    <a href="#" class="btn btn-sm btn-outline-warning rounded-pill px-3">View History</a>
+                                    <a href="#" class="btn btn-sm btn-outline-warning rounded-pill px-4">View History</a>
                                 </div>
                             </div>
                         </div>
